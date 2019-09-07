@@ -8,4 +8,6 @@ urlpatterns = [
     path('getISRO', views.getISRO, name='getISRO'),
     path('getRoscosmos', views.getRoscosmos, name='getRoscosmos'),
     path('getESA', views.getESA, name='getESA'),
+    path('getSpaceports', views.getSpacePorts, name='getSpaceports'),
+    path('runJobs', views.runJobs, name='runJobs'),
 ]
