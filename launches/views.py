@@ -7,6 +7,20 @@ import datetime
 from launches.models import Launch, Spaceport, Company
 from launches.jobs import runSpaceX, runNASA, runSpaceports
 
+def getCompanies(req):
+    companies = Company.objects.all()
+    response = []
+    for company in companies:
+        response.append({
+            "name": company.name,
+            "image": company.image,
+            "details": company.details
+        })
+
+    return JsonResponse({
+        "data": response
+    })
+
 def getSpaceX(req):
     company = Company.objects.get(name='SpaceX')
     launches = Launch.objects.filter(company=company)

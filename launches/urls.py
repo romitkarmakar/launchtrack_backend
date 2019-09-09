@@ -10,4 +10,5 @@ urlpatterns = [
     path('getESA', views.getESA, name='getESA'),
     path('getSpaceports', views.getSpacePorts, name='getSpaceports'),
     path('runJobs', views.runJobs, name='runJobs'),
+    path('getCompanies', views.getCompanies, name='getCompanies'),
 ]
