@@ -21,25 +21,8 @@ def getCompanies(req):
         "data": response
     })
 
-def getSpaceX(req):
-    company = Company.objects.get(name='SpaceX')
-    launches = Launch.objects.filter(company=company)
-
-    arr = []
-    for i in launches:
-        arr.append({
-            "name": i.name,
-            "date": i.date,
-            "details": i.details
-        })
-
-    return JsonResponse({
-        "data": arr
-    })
-
-
-def getNASA(req):
-    company = Company.objects.get(name='NASA')
+def getLaunches(req, name):
+    company = Company.objects.get(name=name)
     launches = Launch.objects.filter(company=company)
 
     arr = []
